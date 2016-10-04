@@ -9,7 +9,7 @@ public class State {
 	
 	public State(ArrayList <Stack<String>> stateMatrix, int height){
 		this.stateMatrix = stateMatrix;
-		this.height = height+1;
+		this.height = height;
 		this.heuristic = 0;
 	}
 	

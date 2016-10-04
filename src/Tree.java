@@ -43,7 +43,7 @@ public class Tree {
 	}
 	
 public boolean breadthFirstSearch(State finalState , int maxVisited){
-		int a=0;
+		
 		int counter = 0;
 		
 		if(parentNode.isEqual(finalState)){
@@ -55,7 +55,7 @@ public boolean breadthFirstSearch(State finalState , int maxVisited){
 		Queue <Node> frontier = new LinkedList<Node>();
 		
 		frontier.add(parentNode);
-		a++;
+		
 		while(!frontier.isEmpty() && counter++ < maxVisited){
 			
 			Node n = frontier.poll();
@@ -79,12 +79,10 @@ public boolean breadthFirstSearch(State finalState , int maxVisited){
 								System.out.println(newNode.cost);
 								System.out.print("Moves: ");
 								printMoves(newNode);
-								System.out.print(a);
 								return true;
 							}
 							n.addChild(newNode);
 							frontier.add(newNode);
-							a++;
 						}
 					}
 				}
@@ -100,13 +98,13 @@ public boolean breadthFirstSearch(State finalState , int maxVisited){
 	}
 	
 	public boolean depthFirstSearch(State finalState , int maxVisited){
-		int a=0;
+		
 		int counter = 0;
 		
 		Stack <Node> frontier = new Stack<Node>();
 		
 		frontier.add(parentNode);
-		a++;
+		
 		while(!frontier.isEmpty() && counter++ < maxVisited){
 			
 			Node n = frontier.pop();
@@ -116,7 +114,6 @@ public boolean breadthFirstSearch(State finalState , int maxVisited){
 			if(n.isEqual(finalState)){
 				System.out.println(n.cost);
 				printMoves(n);
-				System.out.println(a);
 				return true;
 			}
 			
@@ -133,7 +130,6 @@ public boolean breadthFirstSearch(State finalState , int maxVisited){
 						if(!isAlreadyVisited(newNodeState)){
 							n.addChild(newNode);
 							frontier.push(newNode);
-							a++;
 						}
 					}
 				}
@@ -198,9 +194,8 @@ public boolean uniformCost (State finalState , int maxVisited){
 
 public boolean aStarConsistent (State finalState , int maxVisited){
 	int counter = 0;
-	 int as =0;
 	PriorityQueue <Node> frontier = new PriorityQueue<Node>(1,new Comparator<Node>() {
-      
+       
         public int compare(Node node1, Node node2)
         {
         	if(node1.cost_heuristic > node2.cost_heuristic){
@@ -212,7 +207,7 @@ public boolean aStarConsistent (State finalState , int maxVisited){
 	
 	parentNode.addHeuristic(finalState);
 	frontier.add(parentNode);
-		as ++;
+	
 	while(!frontier.isEmpty() && counter++ < maxVisited){
 		
 		Node n = frontier.poll();
@@ -223,7 +218,6 @@ public boolean aStarConsistent (State finalState , int maxVisited){
 			System.out.println(n.cost);
 			//n.myState.prettyPrint();
 			printMoves(n);
-			System.out.println(as);
 			return true;
 		}
 		
@@ -241,7 +235,6 @@ public boolean aStarConsistent (State finalState , int maxVisited){
 						n.addChild(newNode);
 						newNode.addHeuristic(finalState);
 						frontier.add(newNode);
-						as++;
 					}
 				}
 			}
@@ -254,7 +247,6 @@ public boolean aStarConsistent (State finalState , int maxVisited){
 
 public boolean aStarInConsistent (State finalState , int maxVisited){
 	int counter = 0;
-	int a=0;
 	PriorityQueue <Node> frontier = new PriorityQueue<Node>(1,new Comparator<Node>() {
        
         public int compare(Node node1, Node node2)
@@ -268,7 +260,7 @@ public boolean aStarInConsistent (State finalState , int maxVisited){
 	
 	parentNode.addHeuristic2();
 	frontier.add(parentNode);
-	a++;
+	
 	while(!frontier.isEmpty() && counter++ < maxVisited){
 		
 		Node n = frontier.poll();
@@ -279,7 +271,6 @@ public boolean aStarInConsistent (State finalState , int maxVisited){
 			System.out.println(n.cost + " / " + maxVisited);
 			//n.myState.prettyPrint();
 			printMoves(n);
-			System.out.println(a);
 			return true;
 		}
 		
@@ -297,7 +288,6 @@ public boolean aStarInConsistent (State finalState , int maxVisited){
 						n.addChild(newNode);
 						newNode.addHeuristic2();
 						frontier.add(newNode);
-						a++;
 					}
 				}
 			}
