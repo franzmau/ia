@@ -87,7 +87,7 @@ public class main {
 		}*/
 		tree=new Tree (initialState);
 		//System.out.println("\n a* Consistent\n");
-		boolean aux3 =tree.aStarConsistent(finalState , 100);
+		boolean aux3 =tree.aStarConsistent(finalState);
 		if(!aux3){
 			System.out.println("No solution found");
 		}
