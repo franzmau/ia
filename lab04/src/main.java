@@ -75,35 +75,38 @@ public class main {
 		
 		Tree tree = new Tree(initialState);
 		/*System.out.println("Uniform cost\n");
-		boolean aux =tree.uniformCost(finalState, 100);
+		boolean aux =tree.uniformCost(finalState);
 		if(!aux){
 			System.out.println("No solution found");
 		}
 		System.out.println("\n a* Inconsistent\n");
 		tree=new Tree (initialState);
-		boolean aux2=tree.aStarInConsistent(finalState, 100);
+		boolean aux2=tree.aStarInConsistent(finalState);
 		if(!aux2){
 			System.out.println("No solution found");
-		}*/
+		}
 		tree=new Tree (initialState);
 		//System.out.println("\n a* Consistent\n");
 		boolean aux3 =tree.aStarConsistent(finalState);
 		if(!aux3){
 			System.out.println("No solution found");
 		}
-		/*
 		tree=new Tree (initialState);
 		System.out.println("\n Breadth First\n");
-		boolean aux4 =tree.breadthFirstSearch(finalState , 100);
+		
+		boolean aux4 =tree.breadthFirstSearch(finalState);
 		if(!aux4){
 			System.out.println("No solution found");
 		}
+		
 		tree=new Tree (initialState);
 		System.out.println("\n Depth First\n");
-		boolean aux5 =tree.depthFirstSearch(finalState , 100);
+		*/
+		boolean aux5 =tree.depthFirstSearch(finalState);
 		if(!aux5){
 			System.out.println("No solution found");
 		}
+		/*
 		*/
 	}
 
