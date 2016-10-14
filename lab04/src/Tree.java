@@ -62,6 +62,7 @@ public boolean breadthFirstSearch(State finalState){
 			Node n = frontier.poll();
 			
 			visitedNodes.add(n);
+			n.myState.prettyPrint();
 			
 			for(int i = 0; i < COLUMNS; i++ ){
 				for(int j = 0; j < COLUMNS; j++ ){
@@ -159,6 +160,7 @@ public boolean uniformCost (State finalState){
 		Node n = frontier.poll();
 		
 		visitedNodes.add(n);
+		n.myState.prettyPrint();
 		
 		if(n.isEqual(finalState)){
 			System.out.println(n.cost);

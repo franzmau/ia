@@ -73,12 +73,17 @@ public class main {
 		
 		//finalState.prettyPrint();
 		
+		
 		Tree tree = new Tree(initialState);
-		/*System.out.println("Uniform cost\n");
+		
+		/*
+		System.out.println("Uniform cost\n");
+		 
 		boolean aux =tree.uniformCost(finalState);
 		if(!aux){
 			System.out.println("No solution found");
 		}
+		
 		System.out.println("\n a* Inconsistent\n");
 		tree=new Tree (initialState);
 		boolean aux2=tree.aStarInConsistent(finalState);
@@ -86,11 +91,13 @@ public class main {
 			System.out.println("No solution found");
 		}
 		tree=new Tree (initialState);
-		//System.out.println("\n a* Consistent\n");
+		
+		System.out.println("\n a* Consistent\n");*/
 		boolean aux3 =tree.aStarConsistent(finalState);
 		if(!aux3){
 			System.out.println("No solution found");
 		}
+		/*
 		tree=new Tree (initialState);
 		System.out.println("\n Breadth First\n");
 		
@@ -100,8 +107,8 @@ public class main {
 		}
 		
 		tree=new Tree (initialState);
-		System.out.println("\n Depth First\n");
-		*/
+		/*System.out.println("\n Depth First\n");
+		
 		boolean aux5 =tree.depthFirstSearch(finalState);
 		if(!aux5){
 			System.out.println("No solution found");

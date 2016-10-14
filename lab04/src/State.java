@@ -29,7 +29,7 @@ public class State {
 	public State move(int from, int to){
 		State newState = null;
 		if(stateMatrix.get(from).size() > 0 && 
-			stateMatrix.get(from).size() < height &&
+			stateMatrix.get(to).size() < height &&
 			from != to){
 			newState = new State(this);
 			ArrayList <Stack<String>> newMatrix= newState.stateMatrix;
